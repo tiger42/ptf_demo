@@ -1,0 +1,44 @@
+<?php /*
+
+[General]
+log_level = 0
+
+[DB_Local]
+driver   = MySQLi   ; MySQLi or PDO_MySQL
+host     = localhost
+port     = 3306
+database = ptf_demo
+username = ptf
+password = ptf
+
+[ViewSmarty]
+template_dir   = src/View/Smarty/templates/   ; The template path for the Smarty view
+plugins_dir    = src/View/Smarty/plugins/
+compile_dir    = var/smarty/templates_c/
+cache_dir      = var/smarty/cache/
+caching        = 1
+cache_lifetime = 86400   ; 1 day
+compile_check  = off
+template_404   = error/404.tpl
+
+[ViewPlain]
+template_dir = src/View/Plain/templates/   ; The template path for the Plain view
+template_404 = error/404.tpl
+
+[SessionMemcache]
+hosts[]      = localhost:11211
+session_name = PTFDEMO_SESSID
+
+[SessionFile]
+session_name = PTFDEMO_SESSID
+
+[AuthDB]
+idletime      = 3600   ; 1 hour
+salt          = PtfDemo   ; Arbitrary string that will be added to the session string before hashing
+connection    = DB_Local   ; The DB connection to use (see its definition above)
+table         = users   ; The name of the DB table where the user data is stored in
+col_username  = username   ; The name of the username column
+col_password  = password   ; The name of the password column
+col_user_id   = id   ; The name of the user ID column
+
+*/
