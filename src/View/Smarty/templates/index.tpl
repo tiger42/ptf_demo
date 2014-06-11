@@ -9,7 +9,7 @@
                 {include file="include/header.tpl"}
             </div>
             {nocache}
-                {assign var=baseurl value=$context->getBaseUrl() nocache}
+                {assign var=baseurl value=$context->getBaseUrl()}
                 <div id="menu">
                     {if $loggedIn}
                         <a href="{$baseurl}/article/edit">New Article</a> |
@@ -58,7 +58,7 @@
                     {/if}
 
                     {if $showPagination}
-                        {assign var=blogurl value=$baseurl|cat:"/show/blog" nocache}
+                        {assign var=blogurl value=$baseurl|cat:"/show/blog"}
                         <div class="pagination">
                             {include file="include/pagination.tpl"}
                         </div>
