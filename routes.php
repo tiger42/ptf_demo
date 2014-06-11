@@ -1,7 +1,8 @@
 <?php
 
-// Some routes just for demonstration purposes
+// Some routes - just for demonstration purposes
 $routes = [
-    'start/'     => 'show/blog',
-    'goto/login' => 'show/login'
+    'start/'         => 'show/blog',
+    'goto/login'     => 'show/login',
+    'article/create' => 'article/edit'
 ];

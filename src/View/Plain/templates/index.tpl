@@ -11,7 +11,7 @@
             </div>
             <div id="menu">
                 <?php if ($this->loggedIn): ?>
-                    <a href="<?= $baseurl; ?>/article/edit">New Article</a> |
+                    <a href="<?= $baseurl; ?>/article/create">New Article</a> |
                     <a href="<?= $baseurl; ?>/auth/logout">Logout</a>
                 <?php else: ?>
                     <a href="<?= $baseurl; ?>/show/login">Login</a>

@@ -12,7 +12,7 @@
                 {assign var=baseurl value=$context->getBaseUrl()}
                 <div id="menu">
                     {if $loggedIn}
-                        <a href="{$baseurl}/article/edit">New Article</a> |
+                        <a href="{$baseurl}/article/create">New Article</a> |
                         <a href="{$baseurl}/auth/logout">Logout</a>
                     {else}
                         <a href="{$baseurl}/show/login">Login</a>
