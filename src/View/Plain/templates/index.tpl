@@ -59,32 +59,7 @@
                 <?php if ($this->showPagination): ?>
                     <?php $blogurl = $baseurl . '/show/blog'; ?>
                     <div class="pagination">
-                        <span>
-                            <?= $this->pagination_first([
-                                'url'  => $blogurl,
-                                'link' => "<img src='$baseurl/img/icon_pagination_first.gif' alt='first' />",
-                                'inactivelink' => "<span class='spacer'>&nbsp;</span>"
-                            ]); ?>
-                            <?= $this->pagination_prev([
-                                'url'  => $blogurl,
-                                'link' => "<img src='$baseurl/img/icon_pagination_prev.gif' alt='previous' />",
-                                'inactivelink' => "<span class='spacer'>&nbsp;</span>"
-                            ]); ?>
-                            <span class="pagelist">
-                                <?= $this->pagination_list(['url' => $blogurl]); ?>
-                                (<?= $this->pagination_count(); ?>)
-                            </span>
-                            <?= $this->pagination_next([
-                                'url'  => $blogurl,
-                                'link' => "<img src='$baseurl/img/icon_pagination_next.gif' alt='next' />",
-                                'inactivelink' => "<span class='spacer'>&nbsp;</span>"
-                            ]); ?>
-                            <?= $this->pagination_last([
-                                'url'  => $blogurl,
-                                'link' => "<img src='$baseurl/img/icon_pagination_last.gif' alt='last' />",
-                                'inactivelink' => "<span class='spacer'>&nbsp;</span>"
-                            ]); ?>
-                        </span>
+                        <?php $this->include_tpl('include/pagination.tpl', ['baseurl' => $baseurl, 'url' => $blogurl]); ?>
                     </div>
                 <?php endif; ?>
             </div>
