@@ -1,7 +1,14 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        {include file="include/pagehead.tpl" title="Edit Article"}
+        {nocache}
+            {if $blogEntry.id}
+                {assign var=title value="Edit Article"}
+            {else}
+                {assign var=title value="Create Article"}
+            {/if}
+        {/nocache}
+        {include file="include/pagehead.tpl" title=$title}
     </head>
     <body>
         <div id="main">

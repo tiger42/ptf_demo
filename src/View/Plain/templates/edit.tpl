@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <?php $this->include_tpl('include/pagehead.tpl', ['title' => 'Edit Article']); ?>
+        <?php $title = $this->blogEntry['id'] ? 'Edit Article' : 'Create Article'; ?>
+        <?php $this->include_tpl('include/pagehead.tpl', ['title' => $title]); ?>
     </head>
     <body>
         <div id="main">
