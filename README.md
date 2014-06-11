@@ -1,5 +1,5 @@
-ptf\_demo
-=========
+Demo application for Ptf
+========================
 
 Installation
 ------------
