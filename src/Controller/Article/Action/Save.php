@@ -58,6 +58,7 @@ class Save extends \Ptf\Controller\Base\Action\Base
             if (is_numeric($data['id'])) {
                 $blogEntries->update('id = ' . $data['id']);   // Update the record with the given user ID
             } else {
+                $blogEntries['created_at'] = null;   // Explicitly set to null, for the timestamp to get updated
                 $blogEntries->insert();   // Insert a new record
             }
         } catch (\Ptf\Core\Exception\DBQuery $e) {
