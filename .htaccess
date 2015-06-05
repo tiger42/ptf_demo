@@ -1,5 +1,8 @@
+DirectoryIndex index.php
+
 RewriteEngine On
 
 RewriteRule ^css - [L]
 RewriteRule ^img - [L]
 RewriteRule ^([^\/]*)/?([^\/]*) index.php?controller=$1&action=$2 [QSA]
+

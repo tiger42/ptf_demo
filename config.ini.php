@@ -16,9 +16,9 @@ template_dir   = src/View/Smarty/templates/   ; The template path for the Smarty
 plugins_dir    = src/View/Smarty/plugins/
 compile_dir    = var/smarty/templates_c/
 cache_dir      = var/smarty/cache/
-caching        = 1
+caching        = 0       ; Set to "1" for productive environment
 cache_lifetime = 86400   ; 1 day
-compile_check  = off
+compile_check  = on      ; Set to "off" for productive environment
 template_404   = error/404.tpl
 
 [ViewPlain]
@@ -33,12 +33,12 @@ session_name = PTFDEMO_SESSID
 session_name = PTFDEMO_SESSID
 
 [AuthDB]
-idletime      = 3600   ; 1 hour
-salt          = PtfDemo   ; Arbitrary string that will be added to the session string before hashing
+idletime      = 3600       ; 1 hour
+salt          = PtfDemo    ; Arbitrary string that will be added to the session string before hashing
 connection    = DB_Local   ; The DB connection to use (see its definition above)
-table         = users   ; The name of the DB table where the user data is stored in
+table         = users      ; The name of the DB table where the user data is stored in
 col_username  = username   ; The name of the username column
 col_password  = password   ; The name of the password column
-col_user_id   = id   ; The name of the user ID column
+col_user_id   = id         ; The name of the user ID column
 
 */
