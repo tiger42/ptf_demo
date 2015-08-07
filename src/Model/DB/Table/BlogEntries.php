@@ -2,8 +2,6 @@
 
 namespace PtfDemo\Model\DB\Table;
 
-use PtfDemo\Application;
-
 /**
  * Model class for the "blog_entries" DB table
  */
