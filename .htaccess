@@ -1,9 +1,12 @@
 DirectoryIndex index.php
 
 RewriteEngine On
+#RewriteBase /ptf_demo/
 
 RewriteRule ^css - [L]
 RewriteRule ^img - [L]
 RewriteRule ^ptf - [L]
-RewriteRule ^([^\/]*)/?([^\/]*) index.php?controller=$1&action=$2 [QSA]
+
+RewriteCond %{REQUEST_URI} !/index\.php$
+RewriteRule ^([^/]+)/?([^/]*)?.*$ index.php?controller=$1&action=$2 [QSA]
 
