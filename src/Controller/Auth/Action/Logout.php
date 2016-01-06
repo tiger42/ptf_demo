@@ -5,7 +5,7 @@ namespace PtfDemo\Controller\Auth\Action;
 /**
  * The action for the "auth/logout" route
  */
-class Logout extends \Ptf\Controller\Base\Action\Base
+class Logout extends \Ptf\Controller\Http\Action\Base
 {
     /**
      * Execute the action

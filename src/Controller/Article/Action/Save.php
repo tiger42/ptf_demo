@@ -5,7 +5,7 @@ namespace PtfDemo\Controller\Article\Action;
 /**
  * The action for the "article/save" route
  */
-class Save extends \Ptf\Controller\Base\Action\Base
+class Save extends \Ptf\Controller\Http\Action\Base
 {
     /**
      * Execute the action

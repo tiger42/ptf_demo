@@ -5,7 +5,7 @@ namespace PtfDemo\Controller;
 /**
  * The Controller for the "show/*" route
  */
-class Show extends \Ptf\Controller\Base
+class Show extends \Ptf\Controller\Http
 {
     /**
      * Get the name of the controller's default action

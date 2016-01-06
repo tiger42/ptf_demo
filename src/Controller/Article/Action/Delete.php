@@ -5,7 +5,7 @@ namespace PtfDemo\Controller\Article\Action;
 /**
  * The action for the "article/delete" route
  */
-class Delete extends \Ptf\Controller\Base\Action\Base
+class Delete extends \Ptf\Controller\Http\Action\Base
 {
     /**
      * Execute the action

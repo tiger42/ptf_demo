@@ -5,7 +5,7 @@ namespace PtfDemo\Controller\Show\Action;
 /**
  * The action for the "show/blog" route
  */
-class Blog extends \Ptf\Controller\Base\Action\Base
+class Blog extends \Ptf\Controller\Http\Action\Base
 {
     /**
      * Maximum number of blog entries to display per page

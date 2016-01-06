@@ -5,7 +5,7 @@ namespace PtfDemo\Controller\Auth\Action;
 /**
  * The action for the "auth/login" route
  */
-class Login extends \Ptf\Controller\Base\Action\Base
+class Login extends \Ptf\Controller\Http\Action\Base
 {
     /**
      * Execute the action

@@ -12,7 +12,7 @@ Configuration
 2. Create a MySQL database and import the DB dump from __sql/demo.sql__.
 3. Adjust the database parameters and the database driver to use (PDO\_MySQL or MySQLi) in __config.ini.php__.
 4. Make sure that the __var/__ directory is writable for the webserver user.
-5. If you like, you may configure the application to use Smarty as the template engine in __src/App/Context.php__.
+5. If you like, you may configure the application to use Smarty as its template engine in __src/App/Context.php__.
 You can also choose to use Memcached instead of files for session storage there.
 6. Run `bin/compile_inis.php` on your command line to generate the configuration classes from the INI file settings.
 
