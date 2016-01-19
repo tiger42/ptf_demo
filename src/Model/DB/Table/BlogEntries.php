@@ -10,7 +10,7 @@ class BlogEntries extends \Ptf\Model\DB\Table
     /**
      * Initialize the table object from the config data
      *
-     * @param   \PtfDemo\App\Context $context The application's context
+     * @param   \PtfDemo\App\Context $context  The application's context
      */
     public function __construct(\PtfDemo\App\Context $context)
     {
@@ -22,7 +22,7 @@ class BlogEntries extends \Ptf\Model\DB\Table
     /**
      * Join this table with the "users" table
      *
-     * @return  \PtfDemo\Model\DB\Table\BlogEntries This object (for fluent interface)
+     * @return  \PtfDemo\Model\DB\Table\BlogEntries  This object (for fluent interface)
      */
     public function joinUsers()
     {
@@ -30,5 +30,4 @@ class BlogEntries extends \Ptf\Model\DB\Table
 
         return $this->join($users, 'users.id = user_id', \Ptf\Model\DB\Table::LEFT_JOIN);
     }
-
 }

@@ -20,5 +20,4 @@ class PtfDemo extends \Ptf\Core\Auth\DB
     {
         return md5($password) == $hash;
     }
-
 }

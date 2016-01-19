@@ -16,5 +16,4 @@ class Show extends \Ptf\Controller\Http
     {
         return 'Blog';
     }
-
 }

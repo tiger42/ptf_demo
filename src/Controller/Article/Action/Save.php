@@ -10,8 +10,8 @@ class Save extends \Ptf\Controller\Http\Action\Base
     /**
      * Execute the action
      *
-     * @param   \Ptf\Core\Http\Request $request   The current request object
-     * @param   \Ptf\Core\Http\Response $response The response object
+     * @param   \Ptf\Core\Http\Request $request    The current request object
+     * @param   \Ptf\Core\Http\Response $response  The response object
      */
     public function execute(\Ptf\Core\Http\Request $request, \Ptf\Core\Http\Response $response)
     {
@@ -37,10 +37,10 @@ class Save extends \Ptf\Controller\Http\Action\Base
     /**
      * Save the POST data from the edit form to the database
      *
-     * @param   \Ptf\Core\Http\Request $request  The current request object
-     * @param   \PtfDemo\Core\Auth\PtfDemo $auth The application's authentication object
-     * @param   \PtfDemo\App\Context $context    The application's context
-     * @return  boolean                          Could the data be saved?
+     * @param   \Ptf\Core\Http\Request $request   The current request object
+     * @param   \PtfDemo\Core\Auth\PtfDemo $auth  The application's authentication object
+     * @param   \PtfDemo\App\Context $context     The application's context
+     * @return  boolean                           Could the data be saved?
      */
     private function saveData(\Ptf\Core\Http\Request $request, \PtfDemo\Core\Auth\PtfDemo $auth, \PtfDemo\App\Context $context)
     {
@@ -66,5 +66,4 @@ class Save extends \Ptf\Controller\Http\Action\Base
         }
         return true;
     }
-
 }

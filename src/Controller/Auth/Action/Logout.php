@@ -10,8 +10,8 @@ class Logout extends \Ptf\Controller\Http\Action\Base
     /**
      * Execute the action
      *
-     * @param   \Ptf\Core\Http\Request $request   The current request object
-     * @param   \Ptf\Core\Http\Response $response The response object
+     * @param   \Ptf\Core\Http\Request $request    The current request object
+     * @param   \Ptf\Core\Http\Response $response  The response object
      */
     public function execute(\Ptf\Core\Http\Request $request, \Ptf\Core\Http\Response $response)
     {
@@ -20,5 +20,4 @@ class Logout extends \Ptf\Controller\Http\Action\Base
         $auth->logout();
         $this->forward('/');
     }
-
 }

@@ -12,6 +12,7 @@ class Context extends \Ptf\App\Context
      * @var \PtfDemo\Core\Auth\PtfDemo
      */
     protected $auth;
+
     /**
      * The application's session
      * @var \Ptf\Core\Session
@@ -72,7 +73,7 @@ class Context extends \Ptf\App\Context
     /**
      * Get the application's authentication object
      *
-     * @return    \PtfDemo\Core\Auth\PtfDemo The Auth object
+     * @return    \PtfDemo\Core\Auth\PtfDemo  The Auth object
      */
     public function getAuth()
     {
@@ -82,5 +83,4 @@ class Context extends \Ptf\App\Context
         }
         return $this->auth;
     }
-
 }
