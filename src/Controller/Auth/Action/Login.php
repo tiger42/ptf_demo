@@ -24,7 +24,7 @@ class Login extends \Ptf\Controller\Http\Action\Base
             $this->forward('/');
         } else {
             $view = \Ptf\Application::getContext()->getView();
-            $view['username'] = $username;
+            $view['username'] = htmlspecialchars($username, ENT_QUOTES | ENT_HTML5);
             $view['error']    = strlen($username) || strlen($password);
             $this->forward('show/login');
         }

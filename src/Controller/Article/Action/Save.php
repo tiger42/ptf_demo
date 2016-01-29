@@ -51,7 +51,11 @@ class Save extends \Ptf\Controller\Http\Action\Base
         $userId = $auth->getUserId();
 
         $blogEntries = new \PtfDemo\Model\DB\Table\BlogEntries($context);
-        $blogEntries->fromArray($data);   // Transfer all form data to the DB table object at once
+
+        // Transfer all form data to the DB table object at once
+        $blogEntries->fromArray($data, function ($value) {
+            return htmlspecialchars($value, ENT_QUOTES | ENT_HTML5);
+        });
         $blogEntries['user_id'] = $userId;
 
         try {
