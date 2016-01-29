@@ -28,12 +28,12 @@ class Context extends \Ptf\App\Context
         $this->routingTable = $routes;   // Set our override routes
 
         // Initialize the view to use
-//        $this->view = new \Ptf\View\Smarty($this->getConfig('ViewSmarty'));
-        $this->view = new \Ptf\View\Plain($this->getConfig('ViewPlain'));   // You may omit this line, the Plain view is used as a fallback anyway
+//         $this->view = new \Ptf\View\Smarty($this->getConfig('ViewSmarty'), $this);
+        $this->view = new \Ptf\View\Plain($this->getConfig('ViewPlain'), $this);   // You may omit this line, the Plain view is used as a fallback anyway
 
         // Initialize the session to use
-//        $this->session = \Ptf\Core\Session\Memcache::getInstance();
-//        $this->session->init($this->getConfig('SessionMemcache'), $this);
+//         $this->session = \Ptf\Core\Session\Memcache::getInstance();
+//         $this->session->init($this->getConfig('SessionMemcache'), $this);
         $this->session = \Ptf\Core\Session\File::getInstance();
         $this->session->init($this->getConfig('SessionFile'), $this);
 
