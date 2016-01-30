@@ -3,7 +3,7 @@
 namespace PtfDemo;
 
 // Set the path to the Ptf framework here
-require_once '../ptf/Application.php';
+require_once 'ptf/Application.php';
 
 /**
  * The demo application's main class
