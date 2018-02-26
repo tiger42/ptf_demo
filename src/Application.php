@@ -6,26 +6,26 @@ namespace PtfDemo;
 require_once 'ptf/Application.php';
 
 /**
- * The demo application's main class
+ * The demo application's main class.
  */
 class Application extends \Ptf\Application
 {
     /**
-     * Return the application's context object
+     * Return the application's context object.
      *
-     * @return  \PtfDemo\App\Context        The context of the application
+     * @return \PtfDemo\App\Context  The context of the application
      */
-    public static function getContext()
+    public static function getContext(): \Ptf\App\Context
     {
         return \PtfDemo\App\Context::getInstance();
     }
 
     /**
-     * Initialize the autoloader
+     * Initialize the autoloader.
      *
-     * @param   \Ptf\Core\Autoloader $autoloader  The autoloader to initialize
+     * @param \Ptf\Core\Autoloader $autoloader  The autoloader to initialize
      */
-    protected static function initAutoloader(\Ptf\Core\Autoloader $autoloader)
+    protected static function initAutoloader(\Ptf\Core\Autoloader $autoloader): void
     {
         $autoloader->registerNamespace('PtfDemo', 'src');   // Register our own namespace
         $autoloader->addOverrideDir('src/override');   // Register a directory for Ptf class overrides

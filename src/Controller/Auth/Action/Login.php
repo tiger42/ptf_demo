@@ -2,20 +2,24 @@
 
 namespace PtfDemo\Controller\Auth\Action;
 
+use Ptf\Controller\Http\Action\Base as BaseAction;
+use Ptf\Core\Http\{Request, Response};
+
 /**
- * The action for the "auth/login" route
+ * The action for the "auth/login" route.
  */
-class Login extends \Ptf\Controller\Http\Action\Base
+class Login extends BaseAction
 {
     /**
-     * Execute the action
+     * Execute the action.
      *
-     * @param   \Ptf\Core\Http\Request $request    The current request object
-     * @param   \Ptf\Core\Http\Response $response  The response object
+     * @param Request  $request   The current request object
+     * @param Response $response  The response object
      */
-    public function execute(\Ptf\Core\Http\Request $request, \Ptf\Core\Http\Response $response)
+    public function execute(Request $request, Response $response): void
     {
-        $auth = \Ptf\Application::getContext()->getAuth();
+        $context = \Ptf\Application::getContext();
+        $auth    = $context->getAuth();
 
         $username = $request->getPostVar('username');
         $password = $request->getPostVar('password');
@@ -23,7 +27,7 @@ class Login extends \Ptf\Controller\Http\Action\Base
         if ($auth->login($username, $password)) {
             $this->forward('/');
         } else {
-            $view = \Ptf\Application::getContext()->getView();
+            $view = $context->getView();
             $view['username'] = htmlspecialchars($username, ENT_QUOTES | ENT_HTML5);
             $view['error']    = strlen($username) || strlen($password);
             $this->forward('show/login');

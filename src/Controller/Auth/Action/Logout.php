@@ -2,18 +2,21 @@
 
 namespace PtfDemo\Controller\Auth\Action;
 
+use Ptf\Controller\Http\Action\Base as BaseAction;
+use Ptf\Core\Http\{Request, Response};
+
 /**
- * The action for the "auth/logout" route
+ * The action for the "auth/logout" route.
  */
-class Logout extends \Ptf\Controller\Http\Action\Base
+class Logout extends BaseAction
 {
     /**
-     * Execute the action
+     * Execute the action.
      *
-     * @param   \Ptf\Core\Http\Request $request    The current request object
-     * @param   \Ptf\Core\Http\Response $response  The response object
+     * @param Request  $request   The current request object
+     * @param Response $response  The response object
      */
-    public function execute(\Ptf\Core\Http\Request $request, \Ptf\Core\Http\Response $response)
+    public function execute(Request $request, Response $response): void
     {
         $auth = \Ptf\Application::getContext()->getAuth();
 

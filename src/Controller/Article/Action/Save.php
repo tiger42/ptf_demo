@@ -2,24 +2,32 @@
 
 namespace PtfDemo\Controller\Article\Action;
 
+use PtfDemo\App\Context;
+use PtfDemo\Core\Auth\PtfDemo as Auth;
+use PtfDemo\Model\DB\Table\BlogEntries as BlogEntriesTable;
+use Ptf\Controller\Http\Action\Base as BaseAction;
+use Ptf\Core\Exception\DBQuery as DBQueryException;
+use Ptf\Core\Http\{Request, Response};
+
 /**
- * The action for the "article/save" route
+ * The action for the "article/save" route.
  */
-class Save extends \Ptf\Controller\Http\Action\Base
+class Save extends BaseAction
 {
     /**
-     * Execute the action
+     * Execute the action.
      *
-     * @param   \Ptf\Core\Http\Request $request    The current request object
-     * @param   \Ptf\Core\Http\Response $response  The response object
+     * @param Request  $request   The current request object
+     * @param Response $response  The response object
      */
-    public function execute(\Ptf\Core\Http\Request $request, \Ptf\Core\Http\Response $response)
+    public function execute(Request $request, Response $response): void
     {
         $context = \Ptf\Application::getContext();
         $auth    = $context->getAuth();
 
         if (!$auth->checkAuth()) {
             $this->forward('show/login');
+
             return;
         }
 
@@ -35,14 +43,15 @@ class Save extends \Ptf\Controller\Http\Action\Base
     }
 
     /**
-     * Save the POST data from the edit form to the database
+     * Save the POST data from the edit form to the database.
      *
-     * @param   \Ptf\Core\Http\Request $request   The current request object
-     * @param   \PtfDemo\Core\Auth\PtfDemo $auth  The application's authentication object
-     * @param   \PtfDemo\App\Context $context     The application's context
-     * @return  boolean                           Could the data be saved?
+     * @param Request $request  The current request object
+     * @param Auth    $auth     The application's authentication object
+     * @param Context $context  The application's context
+     *
+     * @return bool  Could the data be saved?
      */
-    private function saveData(\Ptf\Core\Http\Request $request, \PtfDemo\Core\Auth\PtfDemo $auth, \PtfDemo\App\Context $context)
+    private function saveData(Request $request, Auth $auth, Context $context): bool
     {
         // Get the POST data from the "blogEntry" namespace
         $data = $request->getPostVars('blogEntry');
@@ -50,7 +59,7 @@ class Save extends \Ptf\Controller\Http\Action\Base
         // Fetch the user ID from the logged in user
         $userId = $auth->getUserId();
 
-        $blogEntries = new \PtfDemo\Model\DB\Table\BlogEntries($context);
+        $blogEntries = new BlogEntriesTable($context);
 
         // Transfer all form data to the DB table object at once
         $blogEntries->fromArray($data, function ($value) {
@@ -65,9 +74,10 @@ class Save extends \Ptf\Controller\Http\Action\Base
                 $blogEntries['created_at'] = \Ptf\Util\now();
                 $blogEntries->insert();   // Insert a new record
             }
-        } catch (\Ptf\Core\Exception\DBQuery $e) {
+        } catch (DBQueryException $e) {
             return false;
         }
+
         return true;
     }
 }

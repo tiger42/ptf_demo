@@ -2,10 +2,16 @@
 
 namespace PtfDemo\Controller\Show\Action;
 
+use PtfDemo\App\Context;
+use PtfDemo\Model\DB\Table\BlogEntries as BlogEntriesTable;
+use Ptf\Controller\Http\Action\Base as BaseAction;
+use Ptf\Core\Http\{Request, Response};
+use Ptf\View\Helper\Pagination;
+
 /**
- * The action for the "show/blog" route
+ * The action for the "show/blog" route.
  */
-class Blog extends \Ptf\Controller\Http\Action\Base
+class Blog extends BaseAction
 {
     /**
      * Maximum number of blog entries to display per page
@@ -13,12 +19,12 @@ class Blog extends \Ptf\Controller\Http\Action\Base
     const MAX_ENTRIES_PER_PAGE = 3;
 
     /**
-     * Execute the action
+     * Execute the action.
      *
-     * @param   \Ptf\Core\Http\Request $request    The current request object
-     * @param   \Ptf\Core\Http\Response $response  The response object
+     * @param Request  $request   The current request object
+     * @param Response $response  The response object
      */
-    public function execute(\Ptf\Core\Http\Request $request, \Ptf\Core\Http\Response $response)
+    public function execute(Request $request, Response $response): void
     {
         $context = \Ptf\Application::getContext();
         $session = $context->getSession();
@@ -36,16 +42,16 @@ class Blog extends \Ptf\Controller\Http\Action\Base
     }
 
     /**
-     * Display the blog articles, initialize the pagination
+     * Display the blog articles, initialize the pagination.
      *
-     * @param   \PtfDemo\App\Context $context  The application's context
-     * @param   integer $page                  The page to display
+     * @param Context $context  The application's context
+     * @param int     $page     The page to display
      */
-    private function displayBlog(\PtfDemo\App\Context $context, $page)
+    private function displayBlog(Context $context, int $page): void
     {
         $view = $context->getView();
 
-        $blogEntries = new \PtfDemo\Model\DB\Table\BlogEntries($context);
+        $blogEntries = new BlogEntriesTable($context);
 
         // Determine the number of blog entries
         $entryCount = $blogEntries->count();
@@ -60,7 +66,7 @@ class Blog extends \Ptf\Controller\Http\Action\Base
         if ($entryCount) {
             // Initialize pagination if necessary
             if ($entryCount > self::MAX_ENTRIES_PER_PAGE) {
-                $pagination = new \Ptf\View\Helper\Pagination($page, self::MAX_ENTRIES_PER_PAGE, $entryCount);
+                $pagination = new Pagination($page, self::MAX_ENTRIES_PER_PAGE, $entryCount);
                 $view['pagination'] = $pagination;   // This assignment is needed by the view's pagination plugins
                 $offset = $pagination->getOffset();
                 $view['showPagination'] = true;

@@ -4,7 +4,7 @@
 log_level = 0
 
 [DB_Local]
-driver   = MySQLi   ; MySQLi or PDO_MySQL
+driver   = PDO_MySQL   ; MySQLi or PDO_MySQL
 host     = localhost
 port     = 3306
 database = ptf_demo
