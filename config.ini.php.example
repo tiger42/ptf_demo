@@ -7,6 +7,7 @@ log_level = 0
 driver   = PDO_MySQL   ; MySQLi or PDO_MySQL
 host     = localhost
 port     = 3306
+;socket   = /var/run/mysqld/mysqld.sock
 database = ptf_demo
 username = ptf
 password = ptf
@@ -30,6 +31,9 @@ hosts[]      = localhost:11211
 session_name = PTFDEMO_SESSID
 
 [SessionFile]
+session_name = PTFDEMO_SESSID
+
+[Session]
 session_name = PTFDEMO_SESSID
 
 [AuthDB]

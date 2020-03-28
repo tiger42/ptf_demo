@@ -1,6 +1,7 @@
 ptf
 var/
 src/App/Config/
+config.ini.php
 
 # Eclipse IDE
 .buildpath

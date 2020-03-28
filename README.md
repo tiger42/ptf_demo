@@ -4,17 +4,18 @@ Demo application for Ptf
 Installation
 ------------
 1. Put all files of this repository into a directory below your web root.
-2. Install the [Ptf framework](https://github.com/tiger42/ptf) into an arbitrary directory.
+2. Install the [Ptf framework](https://github.com/tiger42/ptf) into an arbitrary directory. The best place is inside the demo application's directory.
 
 Configuration
 -------------
-1. Change the path to the Ptf installation in __src/Aplication.php__, if necessary.
-2. Create a MySQL database and import the DB dump from __sql/demo.sql__.
-3. Adjust the database parameters and the database driver to use (PDO\_MySQL or MySQLi) in __config.ini.php__.
-4. Make sure that the __var/__ directory is writable for the webserver user.
-5. If you like, you may configure the application to use Smarty as its template engine in __src/App/Context.php__.
-You can also choose to use Memcached instead of files for session storage there.
-6. Run `bin/compile_inis.php` on your command line to generate the configuration classes from the INI file settings.
+1. Change the path to the Ptf installation in __src/Application.php__, if necessary.
+2. Create a MySQL/MariaDB database (e.g. "ptf_demo") and import the DB dump from __sql/demo.sql__.
+3. Copy or rename the __config.ini.php.example__ file to __config.ini.php__.
+4. Adjust the database parameters and the database driver to use (PDO\_MySQL or MySQLi) in __config.ini.php__.
+5. Make sure that the __var/__ directory is writable for the webserver user.
+6. If you like, you may configure the application to use Smarty as its template engine in __src/App/Context.php__.
+You can also configure your preferred Session storage method here (Memcached, file system or default PHP session handling).
+7. Run `bin/compile_inis.php` on the command line to generate the configuration classes from the INI file settings.
 
 Now use your webbrowser to point to the application's URL and the demo application should be loaded.
 
