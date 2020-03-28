@@ -68,9 +68,10 @@ class Save extends BaseAction
         $blogEntries['user_id'] = $userId;
 
         try {
-            if (is_numeric($data['id'])) {
+            if (is_numeric($data['id']) && $data['id'] > 0) {
                 $blogEntries->update('id = ' . $data['id']);   // Update the record with the given user ID
             } else {
+                unset($blogEntries['id']);
                 $blogEntries['created_at'] = \Ptf\Util\now();
                 $blogEntries->insert();   // Insert a new record
             }

@@ -24,7 +24,7 @@ template_404   = error/404.tpl
 
 [ViewPlain]
 template_dir = src/View/Plain/templates/   ; The template path for the Plain view
-template_404 = error/404.tpl
+template_404 = error/404.tpl.php
 
 [SessionMemcache]
 hosts[]      = localhost:11211

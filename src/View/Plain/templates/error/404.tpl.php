@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <?php $this->include_tpl('include/pagehead.tpl', ['title' => 'Error 404']); ?>
+        <?php $this->include_tpl('include/pagehead.tpl.php', ['title' => 'Error 404']); ?>
     </head>
     <body>
         <div id="main">
             <div id="header">
-                <?php $this->include_tpl('include/header.tpl'); ?>
+                <?php $this->include_tpl('include/header.tpl.php'); ?>
             </div>
             <div id="content">
                 <h1>Page not found (Error 404)</h1>
@@ -18,7 +18,7 @@
                 </p>
             </div>
             <div id="footer">
-                <?php $this->include_tpl('include/footer.tpl'); ?>
+                <?php $this->include_tpl('include/footer.tpl.php'); ?>
             </div>
         </div>
     </body>

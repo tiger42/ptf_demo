@@ -84,6 +84,7 @@ class Blog extends BaseAction
 
         $view['loggedIn'] = $context->getAuth()->checkAuth();
 
-        $view->setTemplateName('index.tpl');
+        $suffix = ($view instanceof \Ptf\View\Plain) ? '.php' : '';
+        $view->setTemplateName('index.tpl' . $suffix);
     }
 }

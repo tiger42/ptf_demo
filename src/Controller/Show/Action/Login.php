@@ -21,6 +21,7 @@ class Login extends BaseAction
         $context = \Ptf\Application::getContext();
         $view    = $context->getView();
 
-        $view->setTemplateName('login.tpl');
+        $suffix = ($view instanceof \Ptf\View\Plain) ? '.php' : '';
+        $view->setTemplateName('login.tpl' . $suffix);
     }
 }

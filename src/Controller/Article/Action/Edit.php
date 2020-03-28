@@ -41,6 +41,7 @@ class Edit extends BaseAction
         $view = $context->getView();
         $view['blogEntry'] = $blogEntries;   // Assign the blog entry to the view
 
-        $view->setTemplateName('edit.tpl');
+        $suffix = ($view instanceof \Ptf\View\Plain) ? '.php' : '';
+        $view->setTemplateName('edit.tpl' . $suffix);
     }
 }

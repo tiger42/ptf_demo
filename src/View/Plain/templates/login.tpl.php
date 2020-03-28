@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <?php $this->include_tpl('include/pagehead.tpl', ['title' => 'Login']); ?>
+        <?php $this->include_tpl('include/pagehead.tpl.php', ['title' => 'Login']); ?>
     </head>
     <body>
         <div id="main">
@@ -31,7 +31,7 @@
                 </form>
             </div>
             <div id="footer">
-                <?php $this->include_tpl('include/footer.tpl'); ?>
+                <?php $this->include_tpl('include/footer.tpl.php'); ?>
             </div>
         </div>
     </body>

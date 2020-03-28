@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <?php $this->include_tpl('include/pagehead.tpl', ['title' => 'Home']); ?>
+        <?php $this->include_tpl('include/pagehead.tpl.php', ['title' => 'Home']); ?>
     </head>
     <body>
         <div id="main">
             <div id="header">
-                <?php $this->include_tpl('include/header.tpl'); ?>
+                <?php $this->include_tpl('include/header.tpl.php'); ?>
                 <?php $baseurl = $this->context->getBaseUrl(); ?>
             </div>
             <div id="menu">
@@ -59,12 +59,12 @@
                 <?php if ($this->showPagination): ?>
                     <?php $blogurl = $baseurl . '/show/blog'; ?>
                     <div class="pagination">
-                        <?php $this->include_tpl('include/pagination.tpl', ['baseurl' => $baseurl, 'url' => $blogurl]); ?>
+                        <?php $this->include_tpl('include/pagination.tpl.php', ['baseurl' => $baseurl, 'url' => $blogurl]); ?>
                     </div>
                 <?php endif; ?>
             </div>
             <div id="footer">
-                <?php $this->include_tpl('include/footer.tpl'); ?>
+                <?php $this->include_tpl('include/footer.tpl.php'); ?>
             </div>
         </div>
     </body>

@@ -2,7 +2,7 @@
 <html>
     <head>
         <?php $title = $this->blogEntry['id'] ? 'Edit Article' : 'Create Article'; ?>
-        <?php $this->include_tpl('include/pagehead.tpl', ['title' => $title]); ?>
+        <?php $this->include_tpl('include/pagehead.tpl.php', ['title' => $title]); ?>
     </head>
     <body>
         <div id="main">
@@ -30,7 +30,7 @@
                 </form>
             </div>
             <div id="footer">
-                <?php $this->include_tpl('include/footer.tpl'); ?>
+                <?php $this->include_tpl('include/footer.tpl.php'); ?>
             </div>
         </div>
     </body>
