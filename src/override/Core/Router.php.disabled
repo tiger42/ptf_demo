@@ -80,7 +80,7 @@ class Router
             }
         }
 
-        echo '<b>Mapped route:</b> $route<br />';
+        echo "<b>Mapped route:</b> $route<br />";
 
         return explode('/', $route);
     }
