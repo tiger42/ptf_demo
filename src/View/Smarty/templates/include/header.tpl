@@ -1,3 +1,3 @@
 <div id="headerText">
-    <span>DemoBlog</span>
+    <a href="{$context->getBaseUrl()}">DemoBlog</a>
 </div>

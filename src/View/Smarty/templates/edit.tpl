@@ -33,7 +33,10 @@
                             <label>Text of article</label><br />
                             <textarea name="blogEntry:content">{$blogEntry.content}</textarea>
                         </p>
-                        <input type="submit" value="Save" />
+                        <div class="formActions">
+                            <input type="submit" value="Save" />
+                            <a href="{$context->getBaseUrl()}">cancel</a>
+                        </div>
                     </form>
                 {/nocache}
             </div>

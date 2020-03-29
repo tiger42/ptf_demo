@@ -21,14 +21,17 @@
                         <input type="hidden" name="controller" value="auth" />
                         <input type="hidden" name="action" value="login" />
                         <p>
-                            <label{if isset($error) && $error} class="error"{/if}>Username</label>
+                            <label {if isset($error) && $error}class="error"{/if}>Username</label>
                             <input type="text" name="username" maxlength="100"{if isset($username)} value="{$username}"{/if} />
                         </p>
                         <p>
-                            <label{if isset($error) && $error} class="error"{/if}>Password</label>
+                            <label {if isset($error) && $error}class="error"{/if}>Password</label>
                             <input type="password" name="password" maxlength="100" />
                         </p>
-                        <input type="submit" value="Login" />
+                        <div class="formActions">
+                            <input type="submit" value="Login" />
+                            <a href="{$context->getBaseUrl()}">cancel</a>
+                        </div>
                     </form>
                 {/nocache}
             </div>

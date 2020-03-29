@@ -7,7 +7,7 @@
     <body>
         <div id="main">
             <div id="header">
-                <?php $this->include_tpl('include/header.tpl'); ?>
+                <?php $this->include_tpl('include/header.tpl.php'); ?>
             </div>
             <div id="content">
                 <h1><?php if ($this->blogEntry['id']): ?>Edit<?php else: ?>Create<?php endif; ?> blog article</h1>
@@ -26,7 +26,10 @@
                         <label>Text of article</label><br />
                         <textarea name="blogEntry:content"><?= $this->blogEntry['content']; ?></textarea>
                     </p>
-                    <input type="submit" value="Save" />
+                    <div class="formActions">
+                        <input type="submit" value="Save" />
+                        <a href="<?= $this->context->getBaseUrl(); ?>/">cancel</a>
+                    </div>
                 </form>
             </div>
             <div id="footer">
