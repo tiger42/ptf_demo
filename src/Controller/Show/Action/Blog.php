@@ -30,7 +30,7 @@ class Blog extends BaseAction
         $session = $context->getSession();
 
         $page = $request->getGetVar('page');
-        if (!strlen($page)) {
+        if ($page !== null && !strlen($page)) {
             $page = $session->page;
         }
         if (!is_numeric($page)) {
